@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · HireSphere</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo"><span class="logo-mark">H</span><span>HireSphere</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html" class="active">Admin</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="login.html" class="btn btn-ghost" id="navAuthBtn">Sign in</a>
+        <a href="signup.html" class="btn btn-primary">Get Started</a>
+        <button class="menu-toggle" id="menuToggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div style="margin-bottom: 2rem">
+        <span class="eyebrow" style="color: var(--brown); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight:600">Admin Console</span>
+        <h1 style="margin-top: 0.5rem">Manage job listings.</h1>
+        <p style="color: var(--text-soft); margin-top: 0.5rem">Add, edit and remove postings — changes save instantly to local storage.</p>
+      </div>
+
+      <div class="admin-grid">
+        <div class="admin-form">
+          <h3 id="formTitle" style="margin-bottom: 1.5rem">Post a new job</h3>
+          <form id="adminForm" data-testid="admin-form">
+            <input type="hidden" id="editId" value="" />
+            <div class="field-group"><label>Job Title</label><input type="text" id="jTitle" required /></div>
+            <div class="field-group"><label>Company</label><input type="text" id="jCompany" required /></div>
+            <div class="field-group"><label>Location</label><input type="text" id="jLocation" required placeholder="Bangalore" /></div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.8rem">
+              <div class="field-group"><label>Type</label>
+                <select id="jType"><option>Full-time</option><option>Internship</option><option>Contract</option></select>
+              </div>
+              <div class="field-group"><label>Mode</label>
+                <select id="jMode"><option>Remote</option><option>Hybrid</option><option>On-site</option></select>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.8rem">
+              <div class="field-group"><label>Salary</label><input type="text" id="jSalary" placeholder="₹10 LPA" required /></div>
+              <div class="field-group"><label>Experience</label><input type="text" id="jExp" placeholder="2-4 years" required /></div>
+            </div>
+            <div class="field-group"><label>Category</label>
+              <select id="jCategory">
+                <option>Engineering</option><option>Design</option><option>Data</option>
+                <option>Product</option><option>Marketing</option><option>Sales</option>
+                <option>HR</option><option>Finance</option><option>Operations</option><option>Content</option><option>Security</option><option>Consulting</option>
+              </select>
+            </div>
+            <div class="field-group"><label>Tags (comma separated)</label><input type="text" id="jTags" placeholder="JavaScript, React" /></div>
+            <div class="field-group"><label>Description</label><textarea id="jDesc" required></textarea></div>
+            <div style="display:flex; gap:0.6rem">
+              <button type="submit" class="btn btn-primary" style="flex:1" data-testid="admin-submit-btn">Save Job</button>
+              <button type="button" class="btn btn-outline" id="cancelEdit" style="display:none" data-testid="admin-cancel-btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div class="search-bar" style="margin-bottom: 1.2rem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="adminSearch" placeholder="Search jobs..." data-testid="admin-search" />
+          </div>
+          <div id="adminJobsList" class="admin-list" data-testid="admin-jobs-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color: var(--cream)"><span class="logo-mark">H</span><span>HireSphere</span></div>
+        <p>A modern, AI-inspired job application portal — built with HTML, CSS & JavaScript.</p>
+      </div>
+      <div><h4>Product</h4><ul><li>Browse Jobs</li><li>Companies</li><li>Saved Jobs</li><li>Dashboard</li></ul></div>
+      <div><h4>Company</h4><ul><li>About Us</li><li>Careers</li><li>Press</li><li>Contact</li></ul></div>
+      <div><h4>Resources</h4><ul><li>Resume Tips</li><li>Interview Prep</li><li>Blog</li><li>FAQ</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 HireSphere · Built by Kartik Bhatti & Gaurav Mund</div>
+      <div>Crafted with HTML · CSS · JavaScript</div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/seed_jobs.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

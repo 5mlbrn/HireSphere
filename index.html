@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HireSphere — Find Your Dream Job</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" data-testid="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo" data-testid="logo">
+        <span class="logo-mark">H</span>
+        <span>HireSphere</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html">Admin</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" data-testid="theme-toggle" title="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="login.html" class="btn btn-ghost" id="navAuthBtn" data-testid="login-btn">Sign in</a>
+        <a href="signup.html" class="btn btn-primary" data-testid="signup-btn">Get Started</a>
+        <button class="menu-toggle" id="menuToggle" data-testid="menu-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow"><span class="dot"></span> 30+ live openings · Updated daily</span>
+        <h1>Find your <span class="accent">dream job</span> in a sphere of opportunity.</h1>
+        <p class="hero-sub">HireSphere connects ambitious talent with India's most exciting companies. Search, filter, apply — all in one beautifully crafted place.</p>
+        <form class="hero-search" id="heroSearch" data-testid="hero-search">
+          <div class="field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="heroKeyword" placeholder="Job title or keyword" data-testid="hero-keyword-input" />
+          </div>
+          <div class="field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <input type="text" id="heroLocation" placeholder="Location" data-testid="hero-location-input" />
+          </div>
+          <button type="submit" class="btn btn-primary" data-testid="hero-search-btn">Search</button>
+        </form>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num" id="statJobs">30+</div><div class="label">Open positions</div></div>
+          <div class="hero-stat"><div class="num">120+</div><div class="label">Top companies</div></div>
+          <div class="hero-stat"><div class="num">8K+</div><div class="label">Happy hires</div></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-card c1">
+          <div class="mini-job-card">
+            <div class="mini-logo" style="background:#445D48;color:#FDE5D4">G</div>
+            <div class="mini-info"><div class="t">Frontend Developer</div><div class="c">Google · Bangalore</div></div>
+          </div>
+          <span class="mini-pill">Remote</span>
+        </div>
+        <div class="hero-card c2">
+          <div class="mini-job-card">
+            <div class="mini-logo" style="background:#5E3023;color:#FDE5D4">M</div>
+            <div class="mini-info"><div class="t">Cloud Architect</div><div class="c">Microsoft · Hybrid</div></div>
+          </div>
+          <span class="mini-pill" style="background:#5E3023">₹35 LPA</span>
+        </div>
+        <div class="hero-card c3">
+          <div class="mini-job-card">
+            <div class="mini-logo">A</div>
+            <div class="mini-info"><div class="t">Product Manager</div><div class="c">Amazon · Bangalore</div></div>
+          </div>
+          <span class="mini-pill">Hiring fast</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Companies marquee -->
+  <section class="companies">
+    <div class="companies-label">Trusted by leading companies</div>
+    <div class="marquee" id="marquee">
+      <span>Google</span><span>★</span><span>Microsoft</span><span>★</span><span>Amazon</span><span>★</span><span>Infosys</span><span>★</span><span>TCS</span><span>★</span><span>Flipkart</span><span>★</span><span>Razorpay</span><span>★</span><span>Swiggy</span><span>★</span>
+      <span>Google</span><span>★</span><span>Microsoft</span><span>★</span><span>Amazon</span><span>★</span><span>Infosys</span><span>★</span><span>TCS</span><span>★</span><span>Flipkart</span><span>★</span><span>Razorpay</span><span>★</span><span>Swiggy</span><span>★</span>
+    </div>
+  </section>
+
+  <!-- Featured jobs -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Featured Roles</span>
+        <h2>Hand-picked openings just for you</h2>
+        <p>Curated from top companies hiring this week. Click any card to view the full description.</p>
+      </div>
+      <div id="featuredJobs" class="jobs-grid" data-testid="featured-jobs"></div>
+      <div style="text-align:center; margin-top:2.5rem">
+        <a href="jobs.html" class="btn btn-outline" data-testid="view-all-jobs-btn">View all 30 jobs →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Resume Tips -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">AI-Powered Coaching</span>
+        <h2>Tips that get you hired</h2>
+        <p>Smart suggestions distilled from thousands of successful applications across India.</p>
+      </div>
+      <div class="tips-grid" id="tipsGrid"></div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How HireSphere works</span>
+        <h2>Three simple steps to your next role</h2>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card"><div class="tip-num">01</div><h4>Search & Filter</h4><p>Use smart filters to find jobs that match your skills, location and salary expectations.</p></div>
+        <div class="tip-card"><div class="tip-num">02</div><h4>Apply with Confidence</h4><p>Submit a polished application with cover letter and resume in less than two minutes.</p></div>
+        <div class="tip-card"><div class="tip-num">03</div><h4>Track & Get Hired</h4><p>Watch your applications progress in real-time on your personal dashboard.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div style="background: var(--green); color: var(--cream); padding: 4rem 3rem; border-radius: 28px; text-align:center; position: relative; overflow:hidden">
+        <h2 style="color: var(--cream); margin-bottom: 1rem">Ready to take the leap?</h2>
+        <p style="opacity:.85; max-width: 520px; margin: 0 auto 2rem">Create a free account and unlock job alerts, saved searches and a recruiter-friendly profile.</p>
+        <a href="signup.html" class="btn btn-accent" data-testid="cta-signup-btn">Create free account</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" data-testid="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color: var(--cream)"><span class="logo-mark">H</span><span>HireSphere</span></div>
+        <p>A modern, AI-inspired job application portal — built with HTML, CSS & JavaScript.</p>
+      </div>
+      <div><h4>Product</h4><ul><li>Browse Jobs</li><li>Companies</li><li>Saved Jobs</li><li>Dashboard</li></ul></div>
+      <div><h4>Company</h4><ul><li>About Us</li><li>Careers</li><li>Press</li><li>Contact</li></ul></div>
+      <div><h4>Resources</h4><ul><li>Resume Tips</li><li>Interview Prep</li><li>Blog</li><li>FAQ</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 HireSphere · Built by Kartik Bhatti & Gaurav Mund</div>
+      <div>Crafted with HTML · CSS · JavaScript</div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/seed_jobs.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Jobs · HireSphere</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo"><span class="logo-mark">H</span><span>HireSphere</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="jobs.html" class="active">Jobs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html">Admin</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="login.html" class="btn btn-ghost" id="navAuthBtn">Sign in</a>
+        <a href="signup.html" class="btn btn-primary">Get Started</a>
+        <button class="menu-toggle" id="menuToggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div style="margin-bottom: 2.5rem">
+        <span class="eyebrow" style="color: var(--brown); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight:600">Browse Jobs</span>
+        <h1 style="margin-top: 0.5rem">Discover roles tailored to you.</h1>
+      </div>
+
+      <div class="jobs-toolbar">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="searchInput" placeholder="Search by title, company or skill..." data-testid="search-input" />
+        </div>
+        <select id="sortSelect" class="sort-select" data-testid="sort-select">
+          <option value="latest">Latest first</option>
+          <option value="salary-high">Salary: High to Low</option>
+          <option value="salary-low">Salary: Low to High</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </div>
+
+      <div class="jobs-layout">
+        <aside class="filters" data-testid="filters-panel">
+          <h4>Filters <span class="clear-link" id="clearFilters" data-testid="clear-filters">Clear all</span></h4>
+
+          <div class="filter-group">
+            <h5>Work Mode</h5>
+            <div id="modeFilters">
+              <label><input type="checkbox" value="Remote" name="mode" /> Remote</label>
+              <label><input type="checkbox" value="Hybrid" name="mode" /> Hybrid</label>
+              <label><input type="checkbox" value="On-site" name="mode" /> On-site</label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h5>Job Type</h5>
+            <div id="typeFilters">
+              <label><input type="checkbox" value="Full-time" name="type" /> Full-time</label>
+              <label><input type="checkbox" value="Internship" name="type" /> Internship</label>
+              <label><input type="checkbox" value="Contract" name="type" /> Contract</label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h5>Category</h5>
+            <div id="categoryFilters"></div>
+          </div>
+
+          <div class="filter-group">
+            <h5>Experience Level</h5>
+            <div id="expFilters">
+              <label><input type="radio" value="all" name="exp" checked /> All Levels</label>
+              <label><input type="radio" value="entry" name="exp" /> Entry (0–1 yr)</label>
+              <label><input type="radio" value="mid" name="exp" /> Mid (2–5 yrs)</label>
+              <label><input type="radio" value="senior" name="exp" /> Senior (5+ yrs)</label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h5>Min Salary (LPA)</h5>
+            <input type="range" id="salaryRange" min="0" max="50" value="0" style="width:100%; accent-color: var(--green)" data-testid="salary-range" />
+            <div style="display:flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-soft); margin-top: 0.4rem">
+              <span>₹0</span><span id="salaryValue">₹0+ LPA</span>
+            </div>
+          </div>
+        </aside>
+
+        <div>
+          <div class="jobs-count" id="jobsCount">Loading...</div>
+          <div id="jobsGrid" class="jobs-grid" data-testid="jobs-grid">
+            <div class="loader-wrap"><div class="loader"></div><div>Loading jobs...</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Detail Modal -->
+  <div class="modal" id="jobModal" data-testid="job-modal">
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color: var(--cream)"><span class="logo-mark">H</span><span>HireSphere</span></div>
+        <p>A modern, AI-inspired job application portal — built with HTML, CSS & JavaScript.</p>
+      </div>
+      <div><h4>Product</h4><ul><li>Browse Jobs</li><li>Companies</li><li>Saved Jobs</li><li>Dashboard</li></ul></div>
+      <div><h4>Company</h4><ul><li>About Us</li><li>Careers</li><li>Press</li><li>Contact</li></ul></div>
+      <div><h4>Resources</h4><ul><li>Resume Tips</li><li>Interview Prep</li><li>Blog</li><li>FAQ</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 HireSphere · Built by Kartik Bhatti & Gaurav Mund</div>
+      <div>Crafted with HTML · CSS · JavaScript</div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/seed_jobs.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

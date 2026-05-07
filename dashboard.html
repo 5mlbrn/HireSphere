@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · HireSphere</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo"><span class="logo-mark">H</span><span>HireSphere</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="admin.html">Admin</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="login.html" class="btn btn-ghost" id="navAuthBtn">Sign in</a>
+        <a href="signup.html" class="btn btn-primary">Get Started</a>
+        <button class="menu-toggle" id="menuToggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="dash-hero">
+    <div class="container">
+      <span class="eyebrow" style="color: var(--brown); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight:600">Welcome back</span>
+      <h1 id="welcomeName">Hello, Friend 👋</h1>
+      <p style="color: var(--text-soft); margin-top: 0.5rem">Here's a snapshot of your job hunt today.</p>
+
+      <div class="dash-stats">
+        <div class="stat-card" data-testid="stat-applications">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <div class="num" id="appsCount">0</div>
+          <div class="lab">Applications</div>
+        </div>
+        <div class="stat-card" data-testid="stat-saved">
+          <div class="ico" style="background: var(--brown)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></div>
+          <div class="num" id="savedCount">0</div>
+          <div class="lab">Saved Jobs</div>
+        </div>
+        <div class="stat-card">
+          <div class="ico" style="background: var(--sand); color: var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+          <div class="num" id="reviewCount">0</div>
+          <div class="lab">Under review</div>
+        </div>
+        <div class="stat-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <div class="num" id="matchScore">85%</div>
+          <div class="lab">Profile strength</div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="applications" data-testid="tab-applications">My Applications</button>
+        <button class="tab" data-tab="saved" data-testid="tab-saved">Saved Jobs</button>
+        <button class="tab" data-tab="profile" data-testid="tab-profile">Profile</button>
+      </div>
+
+      <div class="tab-pane active" id="paneApplications">
+        <div id="applicationsList" class="apps-list"></div>
+      </div>
+      <div class="tab-pane" id="paneSaved">
+        <div id="savedList" class="jobs-grid"></div>
+      </div>
+      <div class="tab-pane" id="paneProfile">
+        <div class="form-card" style="margin: 1rem 0; max-width: 100%">
+          <h2>Your Profile</h2>
+          <p class="sub">Recruiters see this. Make it shine.</p>
+          <form id="profileForm" data-testid="profile-form">
+            <div class="field-group"><label>Full Name</label><input type="text" id="profName" placeholder="Your name" /></div>
+            <div class="field-group"><label>Email</label><input type="email" id="profEmail" placeholder="you@example.com" /></div>
+            <div class="field-group"><label>Phone</label><input type="tel" id="profPhone" placeholder="+91 ..." /></div>
+            <div class="field-group"><label>Headline</label><input type="text" id="profHeadline" placeholder="Aspiring Frontend Developer" /></div>
+            <div class="field-group"><label>Skills (comma separated)</label><input type="text" id="profSkills" placeholder="JavaScript, CSS, React" /></div>
+            <div class="field-group"><label>Bio</label><textarea id="profBio" placeholder="Tell recruiters a bit about yourself..."></textarea></div>
+            <button type="submit" class="btn btn-primary btn-block" data-testid="save-profile-btn">Save Profile</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color: var(--cream)"><span class="logo-mark">H</span><span>HireSphere</span></div>
+        <p>A modern, AI-inspired job application portal — built with HTML, CSS & JavaScript.</p>
+      </div>
+      <div><h4>Product</h4><ul><li>Browse Jobs</li><li>Companies</li><li>Saved Jobs</li><li>Dashboard</li></ul></div>
+      <div><h4>Company</h4><ul><li>About Us</li><li>Careers</li><li>Press</li><li>Contact</li></ul></div>
+      <div><h4>Resources</h4><ul><li>Resume Tips</li><li>Interview Prep</li><li>Blog</li><li>FAQ</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 HireSphere · Built by Kartik Bhatti & Gaurav Mund</div>
+      <div>Crafted with HTML · CSS · JavaScript</div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/seed_jobs.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

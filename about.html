@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · HireSphere</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo"><span class="logo-mark">H</span><span>HireSphere</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="jobs.html">Jobs</a><a href="dashboard.html">Dashboard</a><a href="admin.html">Admin</a><a href="about.html" class="active">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+        <a href="login.html" class="btn btn-ghost" id="navAuthBtn">Sign in</a>
+        <a href="signup.html" class="btn btn-primary">Get Started</a>
+        <button class="menu-toggle" id="menuToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our Story</span>
+        <h1>About <span style="color: var(--brown); font-style: italic">HireSphere</span></h1>
+        <p>HireSphere is a modern, JavaScript-powered job application portal designed and built as a Front-end Engineering project. Our goal: showcase the full power of vanilla web technologies — clean DOM manipulation, JSON handling, async fetch, localStorage persistence and responsive design — wrapped in a beautiful, presentation-ready interface.</p>
+      </div>
+
+      <div class="tips-grid" style="margin-bottom: 4rem">
+        <div class="tip-card"><div class="tip-num">⚡</div><h4>Built for Speed</h4><p>Pure HTML, CSS and JavaScript. No frameworks, no build steps — instantly fast on any device.</p></div>
+        <div class="tip-card"><div class="tip-num">🎨</div><h4>Designed Thoughtfully</h4><p>An earthy color palette, glassmorphism touches, soft motion and a fully working light/dark mode.</p></div>
+        <div class="tip-card"><div class="tip-num">📚</div><h4>Syllabus-Aligned</h4><p>Demonstrates DOM manipulation, ES6, JSON, fetch API, async/await, localStorage and responsive design.</p></div>
+      </div>
+
+      <div class="section-head" style="margin-bottom: 1rem">
+        <span class="eyebrow">The Team</span>
+        <h2>Meet the makers</h2>
+        <p>Two students. One vision. A semester-long project that became something we are genuinely proud of.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="dev-card" data-testid="dev-card-kartik">
+          <div class="dev-avatar">KB</div>
+          <h3>Kartik Bhatti</h3>
+          <div class="dev-role">Co-Creator · Frontend</div>
+          <p style="color: var(--text-soft); font-size: 0.95rem">Crafted the UI, animations and core JavaScript modules powering search, filters and the job feed.</p>
+          <div class="dev-info">
+            <div class="dev-info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Roll No: 2511981126</span>
+            </div>
+            <div class="dev-info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+91 76968 58589</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dev-card" data-testid="dev-card-gaurav">
+          <div class="dev-avatar" style="background: linear-gradient(135deg, var(--brown), var(--green))">GM</div>
+          <h3>Gaurav Mund</h3>
+          <div class="dev-role">Co-Creator · Logic</div>
+          <p style="color: var(--text-soft); font-size: 0.95rem">Built the dashboard, admin console and the localStorage-backed application engine.</p>
+          <div class="dev-info">
+            <div class="dev-info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Roll No: 2511981090</span>
+            </div>
+            <div class="dev-info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+91 98121 03588</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top: 5rem; margin-bottom: 1rem">
+        <span class="eyebrow">Tech Stack</span>
+        <h2>Built with care</h2>
+      </div>
+      <div class="tech-stack">
+        <span class="tech-pill">HTML5</span>
+        <span class="tech-pill">CSS3</span>
+        <span class="tech-pill">JavaScript ES6+</span>
+        <span class="tech-pill">JSON</span>
+        <span class="tech-pill">Fetch API</span>
+        <span class="tech-pill">Async / Await</span>
+        <span class="tech-pill">DOM API</span>
+        <span class="tech-pill">localStorage</span>
+        <span class="tech-pill">CSS Grid</span>
+        <span class="tech-pill">CSS Variables</span>
+        <span class="tech-pill">Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color: var(--cream)"><span class="logo-mark">H</span><span>HireSphere</span></div>
+        <p>A modern, AI-inspired job application portal — built with HTML, CSS & JavaScript.</p>
+      </div>
+      <div><h4>Product</h4><ul><li>Browse Jobs</li><li>Companies</li><li>Saved Jobs</li><li>Dashboard</li></ul></div>
+      <div><h4>Company</h4><ul><li>About Us</li><li>Careers</li><li>Press</li><li>Contact</li></ul></div>
+      <div><h4>Resources</h4><ul><li>Resume Tips</li><li>Interview Prep</li><li>Blog</li><li>FAQ</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 HireSphere · Built by Kartik Bhatti & Gaurav Mund</div>
+      <div>Crafted with HTML · CSS · JavaScript</div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/navbar.js"></script>
+</body>
+</html>

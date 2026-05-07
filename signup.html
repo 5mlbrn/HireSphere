@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up · HireSphere</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo"><span class="logo-mark">H</span><span>HireSphere</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="jobs.html">Jobs</a><a href="dashboard.html">Dashboard</a><a href="admin.html">Admin</a><a href="about.html">About</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+        <button class="menu-toggle" id="menuToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form-card">
+    <h2>Create your account</h2>
+    <p class="sub">Join HireSphere and unlock your next opportunity.</p>
+    <form id="signupForm" data-testid="signup-form">
+      <div class="field-group"><label>Full Name</label><input type="text" id="suName" required data-testid="signup-name" /></div>
+      <div class="field-group"><label>Email</label><input type="email" id="suEmail" required data-testid="signup-email" /></div>
+      <div class="field-group"><label>Password</label><input type="password" id="suPwd" required minlength="4" data-testid="signup-pwd" /></div>
+      <button type="submit" class="btn btn-primary btn-block" data-testid="signup-submit">Create Account</button>
+    </form>
+    <p class="form-foot">Already have an account? <a href="login.html">Sign in →</a></p>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/auth.js"></script>
+  <script>document.getElementById('signupForm').addEventListener('submit', (e) => { e.preventDefault(); HSAuth.signup(suName.value, suEmail.value, suPwd.value); });</script>
+</body>
+</html>
